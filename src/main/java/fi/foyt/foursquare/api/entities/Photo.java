@@ -22,6 +22,7 @@ import fi.foyt.foursquare.api.FoursquareEntity;
  * 
  * @author Antti Leppä / Blake Dy
  */
+
 public class Photo implements FoursquareEntity {
 
   private static final long serialVersionUID = -6641038454071667700L;
@@ -106,7 +107,61 @@ public class Photo implements FoursquareEntity {
   public Checkin getCheckin() {
     return checkin;
   }
+
+  /**
+   * Returns height of the photo
+   * 
+   * @return height of the photo
+   */
+  public Integer getHeight() {
+	return height;
+  }
+
+  /**
+   * Returns width of the photo
+   * 
+   * @return width of the photo
+   */
+  public Integer getWidth() {
+	return width;
+  }
+
+  /**
+   * Returns visibility of the photo
+   * 
+   * @return visibility of the photo
+   */
+  public String getVisibility() {
+	return visibility;
+  }
+
+  /**
+   * Returns prefix of the photo
+   * 
+   * @return prefix of the photo
+   */
+  public String getPrefix() {
+	return prefix;
+  }
+
+  /**
+   * Returns suffix of the photo
+   * 
+   * @return suffix of the photo
+   */
+  public String getSuffix() {
+	return suffix;
+  }
   
+  /**
+   * Returns url of the photo (original size)
+   * 
+   * @return url of the photo (original size)
+   */
+  public String getOriginalUrl(){
+	  return getPrefix()+"original"+getSuffix();
+  }
+
   private String id;
   private Long createdAt;
   private String url;
@@ -116,11 +171,10 @@ public class Photo implements FoursquareEntity {
   private CompactVenue venue;
   private CompleteTip tip;
   private Checkin checkin;
-  
-  // TODO
   private Integer height;
   private Integer width;
   private String visibility;
   private String prefix;
   private String suffix;
+ 
 }
